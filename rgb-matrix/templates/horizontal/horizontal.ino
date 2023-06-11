@@ -14,7 +14,7 @@ int x, y, i;
 uint8_t r, g, b;
 uint16_t c;
 
-int hex[] = {0xE50000, 0xFF6000, 0xFFEE00, 0x028121, 0x004CFF, 0x770088};
+int hex[] = HEX_ARRAY;
 
 int hexLength;
 bool fill;

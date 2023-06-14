@@ -176,14 +176,10 @@ class SortingAlgorithmVisualizer:
         sizeFrame.rowconfigure(0, weight=1)
         sizeFrame.rowconfigure(1, weight=1)
         size = tkinter.IntVar(window, self.length)
-        tenRadio = tkinter.Radiobutton(sizeFrame, text='10', variable=size, value=10, command=lambda: self._changeLength(size.get()))
-        tenRadio.grid(row=0, column=1)
-        twentyFiveRadio = tkinter.Radiobutton(sizeFrame, text='25', variable=size, value=25, command=lambda: self._changeLength(size.get()))
-        twentyFiveRadio.grid(row=0, column=2)
-        fiftyRadio = tkinter.Radiobutton(sizeFrame, text='50', variable=size, value=50, command=lambda: self._changeLength(size.get()))
-        fiftyRadio.grid(row=1, column=1)
-        oneHundredRadio = tkinter.Radiobutton(sizeFrame, text='100', variable=size, value=100, command=lambda: self._changeLength(size.get()))
-        oneHundredRadio.grid(row=1, column=2)
+        radioButtons = [None]*4
+        for i in range(4):
+            radioButtons[i] = tkinter.Radiobutton(sizeFrame, text=str(2**(4+i)), variable=size, value=(2**(4+i)), command=lambda: self._changeLength(size.get()))
+            radioButtons[i].grid(row=(i//2), column=(1+i%2))
         algorithmFrame = tkinter.Frame(optionsFrame)
         algorithmFrame.pack(expand=True, fill=tkinter.BOTH, side=tkinter.LEFT, padx=20, pady=10)
         algorithmFrame.grid_propagate(False)

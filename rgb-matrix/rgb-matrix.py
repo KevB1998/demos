@@ -66,7 +66,7 @@ class RGBMatrixDemo:
         leftFrame.pack(expand=True, fill=tkinter.BOTH, side=tkinter.LEFT)
         scroll=tkinter.Scrollbar(leftFrame, orient='vertical')
         scroll.pack(side=tkinter.RIGHT, fill='y')
-        text=tkinter.Text(leftFrame, font=("Terminal, 18"), yscrollcommand=scroll.set)
+        text=tkinter.Text(leftFrame, font=("Terminal, 18"), yscrollcommand=scroll.set, wrap=tkinter.WORD)
         self.text = text
         self.updateText()
         scroll.config(command=text.yview)
